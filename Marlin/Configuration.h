@@ -430,19 +430,12 @@
 #define TEMP_SENSOR_5 0
 #define TEMP_SENSOR_6 0
 #define TEMP_SENSOR_7 0
-#define TEMP_SENSOR_BED 0
-#define TEMP_SENSOR_PROBE 0
-#define TEMP_SENSOR_CHAMBER 0
-
-/* NOTE: this overides the above definitions to ease with merging
- *
- */
 #if ANYCUBIC_KOSSEL_ENABLE_BED > 0
-   #define TEMP_SENSOR_BED 5
+  #define TEMP_SENSOR_BED 5
 #else
   #define TEMP_SENSOR_BED 0
 #endif
-
+#define TEMP_SENSOR_PROBE 0
 #define TEMP_SENSOR_CHAMBER 0
 
 // Dummy thermistor constant temperature readings, for use with 998 and 999
