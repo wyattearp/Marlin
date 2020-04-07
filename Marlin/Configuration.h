@@ -148,7 +148,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "AnyCubic KLP (LPomykal.cz)"
+#define CUSTOM_MACHINE_NAME "Voided"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like http://www.uuidgenerator.net/version4
@@ -659,7 +659,7 @@
   #define DELTA_SEGMENTS_PER_SECOND 80
 
   // After homing move down to a height where XY movement is unconstrained
-  #define DELTA_HOME_TO_SAFE_ZONE
+  //#define DELTA_HOME_TO_SAFE_ZONE
 
   // Delta calibration menu
   // uncomment to add three points calibration menu option.
