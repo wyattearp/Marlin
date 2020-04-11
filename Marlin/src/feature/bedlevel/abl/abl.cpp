@@ -263,7 +263,7 @@ void refresh_bed_level() {
 // Get the Z adjustment for non-linear bed leveling
 float bilinear_z_offset(const xy_pos_t &raw) {
 
-  static float z1, d2, z3, d4, L, D;
+  static float z1, d2, z3, d4, L, D, R;
 
   static xy_pos_t prev { -999.999, -999.999 }, ratio;
 
@@ -321,8 +321,8 @@ float bilinear_z_offset(const xy_pos_t &raw) {
     }
 
     // Bilinear interpolate. Needed since rel.y or thisg.x has changed.
-                L = z1 + d2 * ratio.y;   // Linear interp. LF -> LB
-    const float R = z3 + d4 * ratio.y;   // Linear interp. RF -> RB
+    L = z1 + d2 * ratio.y;   // Linear interp. LF -> LB
+    R = z3 + d4 * ratio.y;   // Linear interp. RF -> RB
 
     D = R - L;
   }
