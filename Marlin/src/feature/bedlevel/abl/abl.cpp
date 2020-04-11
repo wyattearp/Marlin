@@ -335,7 +335,7 @@ float bilinear_z_offset(const xy_pos_t &raw) {
     SERIAL_ECHOLNPAIR("Sudden Shift at x=", rel.x, " / ", bilinear_grid_spacing.x, " -> thisg.x=", thisg.x);
     SERIAL_ECHOLNPAIR(" y=", rel.y, " / ", bilinear_grid_spacing.y, " -> thisg.y=", thisg.y);
     SERIAL_ECHOLNPAIR(" ratio.x=", ratio.x, " ratio.y=", ratio.y);
-    SERIAL_ECHOLNPAIR(" z1=", z1, " z2=", z2, " z3=", z3, " z4=", z4);
+    SERIAL_ECHOLNPAIR(" z1=", z1, " d2=", d2, " z3=", z3, " d4=", d4);
     SERIAL_ECHOLNPAIR(" L=", L, " R=", R, " offset=", offset);
   }
   last_offset = offset;
