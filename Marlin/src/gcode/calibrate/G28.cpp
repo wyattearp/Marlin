@@ -228,7 +228,7 @@ void GcodeSuite::G28() {
   planner.synchronize();
 
   // Home (O)nly if position is unknown
-  if (!homing_needed() && parser.boolval('O')) {
+  if (all_axes_known() && parser.boolval('O')) {
     if (DEBUGGING(LEVELING)) DEBUG_ECHOLNPGM("> homing not needed, skip\n<<< G28");
     return;
   }
