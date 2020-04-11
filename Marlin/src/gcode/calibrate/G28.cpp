@@ -224,14 +224,14 @@ void GcodeSuite::G28() {
     }
   #endif
 
+  // Wait for planner moves to finish!
+  planner.synchronize();
+
   // Home (O)nly if position is unknown
   if (!homing_needed() && parser.boolval('O')) {
     if (DEBUGGING(LEVELING)) DEBUG_ECHOLNPGM("> homing not needed, skip\n<<< G28");
     return;
   }
-
-  // Wait for planner moves to finish!
-  planner.synchronize();
 
   // Disable the leveling matrix before homing
   #if HAS_LEVELING
