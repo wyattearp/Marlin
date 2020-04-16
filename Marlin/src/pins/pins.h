@@ -454,7 +454,7 @@
 #elif MB(ARCHIM1)
   #include "sam/pins_ARCHIM1.h"                 // SAM3X8E                                env:DUE env:DUE_debug
 #elif MB(ARCHIM2)
-  #include "sam/pins_ARCHIM2.h"                 // SAM3X8E                                env:DUE env:DUE_debug
+  #include "sam/pins_ARCHIM2.h"                 // SAM3X8E                                env:DUE_archim env:DUE_archim_debug
 #elif MB(ALLIGATOR)
   #include "sam/pins_ALLIGATOR_R2.h"            // SAM3X8E                                env:DUE env:DUE_debug
 #elif MB(ADSK)
@@ -516,6 +516,10 @@
   #include "stm32f1/pins_MKS_ROBIN_LITE3.h"     // STM32F1                                env:mks_robin_lite3
 #elif MB(MKS_ROBIN_PRO)
   #include "stm32f1/pins_MKS_ROBIN_PRO.h"       // STM32F1                                env:mks_robin_pro
+#elif MB(MKS_ROBIN_E3D)
+  #include "stm32f1/pins_MKS_ROBIN_E3D.h"       // STM32F1                                env:mks_robin_e3
+#elif MB(MKS_ROBIN_E3)
+  #include "stm32f1/pins_MKS_ROBIN_E3.h"        // STM32F1                                env:mks_robin_e3
 
 //
 // ARM Cortex-M4F
@@ -1045,73 +1049,6 @@
 
 #ifndef NUM_SERVO_PLUGS
   #define NUM_SERVO_PLUGS 4
-#endif
-
-//
-// Assign auto fan pins if needed
-//
-#ifndef E0_AUTO_FAN_PIN
-  #ifdef ORIG_E0_AUTO_FAN_PIN
-    #define E0_AUTO_FAN_PIN ORIG_E0_AUTO_FAN_PIN
-  #else
-    #define E0_AUTO_FAN_PIN -1
-  #endif
-#endif
-#ifndef E1_AUTO_FAN_PIN
-  #ifdef ORIG_E1_AUTO_FAN_PIN
-    #define E1_AUTO_FAN_PIN ORIG_E1_AUTO_FAN_PIN
-  #else
-    #define E1_AUTO_FAN_PIN -1
-  #endif
-#endif
-#ifndef E2_AUTO_FAN_PIN
-  #ifdef ORIG_E2_AUTO_FAN_PIN
-    #define E2_AUTO_FAN_PIN ORIG_E2_AUTO_FAN_PIN
-  #else
-    #define E2_AUTO_FAN_PIN -1
-  #endif
-#endif
-#ifndef E3_AUTO_FAN_PIN
-  #ifdef ORIG_E3_AUTO_FAN_PIN
-    #define E3_AUTO_FAN_PIN ORIG_E3_AUTO_FAN_PIN
-  #else
-    #define E3_AUTO_FAN_PIN -1
-  #endif
-#endif
-#ifndef E4_AUTO_FAN_PIN
-  #ifdef ORIG_E4_AUTO_FAN_PIN
-    #define E4_AUTO_FAN_PIN ORIG_E4_AUTO_FAN_PIN
-  #else
-    #define E4_AUTO_FAN_PIN -1
-  #endif
-#endif
-#ifndef E5_AUTO_FAN_PIN
-  #ifdef ORIG_E5_AUTO_FAN_PIN
-    #define E5_AUTO_FAN_PIN ORIG_E5_AUTO_FAN_PIN
-  #else
-    #define E5_AUTO_FAN_PIN -1
-  #endif
-#endif
-#ifndef E6_AUTO_FAN_PIN
-  #ifdef ORIG_E6_AUTO_FAN_PIN
-    #define E6_AUTO_FAN_PIN ORIG_E6_AUTO_FAN_PIN
-  #else
-    #define E6_AUTO_FAN_PIN -1
-  #endif
-#endif
-#ifndef E7_AUTO_FAN_PIN
-  #ifdef ORIG_E7_AUTO_FAN_PIN
-    #define E7_AUTO_FAN_PIN ORIG_E7_AUTO_FAN_PIN
-  #else
-    #define E7_AUTO_FAN_PIN -1
-  #endif
-#endif
-#ifndef CHAMBER_AUTO_FAN_PIN
-  #ifdef ORIG_CHAMBER_AUTO_FAN_PIN
-    #define CHAMBER_AUTO_FAN_PIN ORIG_CHAMBER_AUTO_FAN_PIN
-  #else
-    #define CHAMBER_AUTO_FAN_PIN -1
-  #endif
 #endif
 
 //

@@ -425,6 +425,8 @@
 #define E3_AUTO_FAN_PIN -1
 #define E4_AUTO_FAN_PIN -1
 #define E5_AUTO_FAN_PIN -1
+#define E6_AUTO_FAN_PIN -1
+#define E7_AUTO_FAN_PIN -1
 #define CHAMBER_AUTO_FAN_PIN -1
 
 #define EXTRUDER_AUTO_FAN_TEMPERATURE 50
@@ -1036,6 +1038,8 @@
   // Enable this option and set to HIGH if your SD cards are incorrectly detected.
   //#define SD_DETECT_STATE HIGH
 
+  #define SD_PROCEDURE_DEPTH 1              // Increase if you need more nested M32 calls
+
   #define SD_FINISHED_STEPPERRELEASE true   // Disable steppers when SD Print is finished
   #define SD_FINISHED_RELEASECOMMAND "M84"  // Use "M84XYE" to keep Z enabled so your bed stays in place
 
@@ -1343,6 +1347,7 @@
   //#define LCD_HAOYU_FT800CB         // Haoyu with 4.3" or 5" (480x272)
   //#define LCD_HAOYU_FT810CB         // Haoyu with 5" (800x480)
   //#define LCD_ALEPHOBJECTS_CLCD_UI  // Aleph Objects Color LCD UI
+  //#define LCD_FYSETC_TFT81050       // FYSETC with 5" (800x480)
 
   // Correct the resolution if not using the stock TFT panel.
   //#define TOUCH_UI_320x240
@@ -1409,6 +1414,7 @@
   //#define LCD_LANGUAGE_3 de
   //#define LCD_LANGUAGE_4 es
   //#define LCD_LANGUAGE_5 it
+  //#define LCD_LANGUAGE_6 hu
 
   // Use a numeric passcode for "Screen lock" keypad.
   // (recommended for smaller displays)
