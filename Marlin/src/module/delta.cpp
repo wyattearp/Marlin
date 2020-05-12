@@ -235,7 +235,13 @@ void forward_kinematics_DELTA(const float &z1, const float &z2, const float &z3)
 void home_delta() {
   if (DEBUGGING(LEVELING)) DEBUG_POS(">>> home_delta", current_position);
   // Init the current position of all carriages to 0,0,0
-  current_position.reset();
+  // if we know where we are, do not throw away our current_position
+  if (!all_axes_known()) {
+    current_position.reset();
+  } else {
+    if (DEBUGGING(LEVELING)) DEBUG_POS(">>> home_delta.no_dumb.reset()", current_position);
+    //current_position.reset();
+  }
   destination.reset();
   sync_plan_position();
 
@@ -254,6 +260,7 @@ void home_delta() {
       - probe.offset.z
     #endif
   );
+  if (DEBUGGING(LEVELING)) DEBUG_POS(">>> home_delta.line_to_current_position()", current_position);
   line_to_current_position(homing_feedrate(Z_AXIS));
   planner.synchronize();
 
